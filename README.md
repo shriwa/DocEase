@@ -1,50 +1,45 @@
-# React + TypeScript + Vite
+# DocEase - Frontend
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This is the frontend for the DocEase Application, developed using **React (Vite)** with **TypeScript** and styled with **Tailwind CSS**. The application allows doctors to manage prescriptions, patient history, and medical inventory.
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- **Write Prescriptions**: Doctors can create and manage prescriptions.
+- **Patient History**: View and manage patient records with a detailed history.
+- **Medical Inventory**: Keep track of medicines and medical supplies.
+- **QR Code Generation**: Automatically generate a QR code for every prescription containing doctor and prescription details.
 
-## Expanding the ESLint configuration
+## Tech Stack
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+- **React (Vite)** - Fast development build and optimized production build.
+- **TypeScript** - Strong typing for improved development experience and code reliability.
+- **Tailwind CSS** - Utility-first CSS framework for responsive and modern UI design.
 
-- Configure the top-level `parserOptions` property like this:
+## Prerequisites
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+- **Node.js** (version >= 14)
+- **npm** or **yarn** (for package management)
+
+## Getting Started
+
+### 1. Clone the repository
+
+```bash
+git clone https://github.com/shriwa/DocEase-Frontend.git
+```
+### 2. Install Depencency
+
+```bash
+npm install
+```
+### 3. Start the development server
+
+```bash
+npm run dev
+```
+### 4. Building for production
+
+```bash
+npm run build
 ```
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
-
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
-
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
-```
